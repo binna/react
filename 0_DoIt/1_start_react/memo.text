@@ -24,3 +24,8 @@ react 프로젝트 생성 npx create-react-app 프로젝트이름
 yarn 실행 yarn start 혹은 npm start
 브라우저가 실행되며 리액트 프로젝트 초기 화면이 실행됨
 vscode에서 방금 만든 디렉토리의 프로젝트를 연다.
+
+
+** extension
+Reactjs code snippets
+Prettier - Code formatter
