@@ -1,11 +1,11 @@
 import React from "react";
-import DefaultPropsComponent from "./03/DefaultPropsComponent";
+import StateExample from "./03/StateExample";
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                <DefaultPropsComponent />
+                <StateExample />
             </div>
         )
     }

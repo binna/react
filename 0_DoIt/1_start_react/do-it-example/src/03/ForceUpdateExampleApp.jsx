@@ -1,11 +1,11 @@
 import React from "react";
-import DefaultPropsComponent from "./03/DefaultPropsComponent";
+import ForceUpdateExample from "./03/ForceUpdateExample";
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                <DefaultPropsComponent />
+                <ForceUpdateExample />
             </div>
         )
     }
