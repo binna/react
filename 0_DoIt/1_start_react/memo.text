@@ -51,3 +51,11 @@
             3. setState() 함수는 비동기로 처리되며, 
                 setState() 코드 이후로 연결된 함수들의 실행이 완료된 시점에 화면 동기화 과정을 거친다.
     컨텍스트 : 부모 컴포넌트에서 생성하여 모든 자식 컴포넌트에 전달하는 데이터
+
+** 컴포넌트의 생명주기(Lifecyle)
+    컴포넌트 생성부터 생성 완료까지 4개의 생명주기 함수가 호출 -> 이 과정을 '생성과정'이라고 부름
+        (constructor, getDerivedStateFromProp, render, componentDidMount)
+    컴포넌트 생성 완료부터 갱신 완료까지 5개의 생명주기 함수가 호출 -> 이 과정을 '갱신과정'이라고 부름
+        (getDerivedStateFromProp, shouldComponnetUpdate, render, getSnapshotBeforeUpdate, componentDidUpdate)
+    갱신 완료부터 소멸 완료까지는 1개의 생명주기 함수가 호출 -> 이 과정을 '소멸과정'이라고 부름
+        (componentWillUnmount)
