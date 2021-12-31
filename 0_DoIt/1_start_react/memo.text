@@ -1,3 +1,4 @@
+[1-1] 리엑트 시작하기
 리액트의 가장 큰 특징은 화면 출력에 특화된 프레임 워크이다.
 
 ** 장점
@@ -23,6 +24,7 @@
 
 
 
+[1-2] 리액트 ES6 문법 액기스
 ** 디바운스와 스로틀
 ㄴ 디바운스(debounce)는 
     어떤 내용을 입력하다가 특정 시간 동안 대기하고 있으면 마지막에 입력된 내용을 바탕으로 서버 요청을 하는 방법이다.
@@ -33,6 +35,7 @@
 
 
 
+[1-3] 리액트 컴포넌트
 ** JSX(JavaScript XML)의 줄임말로 '자바스크립트에 XML을 추가한 확장형 문법'이다.
 
 ** 컴포넌트
@@ -59,3 +62,75 @@
         (getDerivedStateFromProp, shouldComponnetUpdate, render, getSnapshotBeforeUpdate, componentDidUpdate)
     갱신 완료부터 소멸 완료까지는 1개의 생명주기 함수가 호출 -> 이 과정을 '소멸과정'이라고 부름
         (componentWillUnmount)
+
+** 콜백함수
+    정의된 위치에서 실행하지 않고, 
+    이후 특정 상황(이벤트, 다른 함수 호출 등)에서 실행되는 함수
+
+
+
+
+[1-4] 에어비앤비 디자인 시스템 따라하기 
+** 스토리북(react-storybook)
+    비주얼 테스트를 위한 도구
+
+** 비주얼 테스트란?
+    화면을 구성하는 컴포넌트들을 독립적으로 관리하고 변화를 살펴볼 수 있는 방법
+
+** 스토리북 실습
+    1. 스토리북 설치
+        yarn add --dev @storybook/react
+    2. package.json에 스토리북 실행 명령어 추가
+        scripts에 "storybook": "start-storybook -p 9001 -c .storybook" 추가
+        ㄴ storybook 명령어가 스토리북 서버를 9001 포트를 통해 실행시킬 수 있도록 설정
+    3. 스토리 파일 만들기
+    4. 스토리북 config.js에 스토리 연결
+        프로젝트 루트 폴더에 '.storybook'라는 폴더 생성,
+        그 폴더 안에 config.js 설정 파일 생성하여 연결
+    5. 스토리북 실행
+        yarn storybook
+
+** 스토리북 확장 도구 사용 실습
+    1. addon-actions 설치
+        yarn add --dev @storybook/addon @storybook/addon-actions
+    2. addon-actions 설정 추가
+        .storybook 폴더에 addons.js 파일 만들기
+            ㄴ import '@storybook/addon-actions/register';
+    3. addon-actions 적용
+        ㄴ import {action} from '@storybook/addon-actions';
+        ㄴ .add('onChange 예제', () => <Input name="name" onChange={action('onChange 이벤트 발생')} />)
+    4. addon-jsx 설치
+        yarn add --dev storybook-addon-jsx
+    5. addon-jsx 설정 추가
+        .storybook 폴더에 addons.js 파일
+            ㄴ import 'storybook-addon-jsx/register';
+        .storybook 폴더에 config.js 파일
+            ㄴ import JSXAddon from 'storybook-addon-jsx';
+            ㄴ setAddon(JSXAddon);
+    6. addon-jsx 적용
+        .add를 .addWithJSX로 수정
+            ㄴ .addWithJSX('기본 설정', () => <Input name="name" />)
+            ㄴ .addWithJSX('label 예제', () => <Input name="name" label="이름" />)
+            ㄴ .addWithJSX('onChange 예제', () => <Input name="name" onChange={action('onChange 이벤트 발생')} />)
+
+** 머티리얼 디자인(Material Design) : https://mui.com/
+    구글에서 공개한 디자인 가이드
+    ex) 안드로이드 디자인
+
+** CDN 방식
+    특정 파일을 전세계에 분산하여 복사해두어 현재 접속한 위치와 가장 근접한 곳에서 빠르게 내려받을 수 있도록 파일을 제공하는 방법
+    ㄴ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+** 루트폴더에 .env 생성
+    SKIP_PREFLIGHT_CHECK=true
+
+** https://materializecss.com/ > GET STARTED 클릭 > 다운로드 가능...!
+
+** node-sass
+    노드 버전 14대로 변경 후 진행(참고 : https://github.com/sass/node-sass/releases)
+    ㄴ yarn remove node-sass
+    ㄴ yarn add node-sass@4.14.1
+
+** 테스트 코드(test code)
+    작성한 코드가 제대로 기능하는지 확인하기 위해 작성하는 코드
+    ㄴ 수행 기능을 작성하기 전에 테스트 코드부터 작성하는 개발방법을 테스트 위주 개발(test-Driven Development)이라고 함
