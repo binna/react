@@ -121,8 +121,9 @@
     특정 파일을 전세계에 분산하여 복사해두어 현재 접속한 위치와 가장 근접한 곳에서 빠르게 내려받을 수 있도록 파일을 제공하는 방법
     ㄴ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
-** 루트폴더에 .env 생성
-    SKIP_PREFLIGHT_CHECK=true
+** The react-scripts package provided by Create React App requires a dependency: "babel-loader": "8.0.5" 에러 발생
+    ㄴ 루트폴더에 .env 생성
+    ㄴ SKIP_PREFLIGHT_CHECK=true
 
 ** https://materializecss.com/ > GET STARTED 클릭 > 다운로드 가능...!
 
