@@ -14,6 +14,13 @@ class ReduxApp01 extends PureComponent {
             type: 'SET_LOADING',
             payload: true
         });
+        this.store.dispatch({
+            type: 'RESET_LOADING',
+        });
+        this.store.dispatch({
+            type: 'SET_USER',
+            payload: { name: 'Park', age: 20 },
+        });
     }
 
     render() {
