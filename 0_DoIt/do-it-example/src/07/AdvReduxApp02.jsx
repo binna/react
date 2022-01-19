@@ -4,7 +4,7 @@ import configureStore from './configureStore';
 import { setLoading, resetLoading } from './actions/loadingActions';
 import { setUser } from './actions/userActions';
 
-class AdvReduxApp2 extends PureComponent {
+class AdvReduxApp02 extends PureComponent {
   store = configureStore({ loading: false });
 
   componentDidMount() {
@@ -17,4 +17,4 @@ class AdvReduxApp2 extends PureComponent {
     return <Provider store={this.store}>리덕스 예제</Provider>;
   }
 }
-export default AdvReduxApp2;
+export default AdvReduxApp02;
