@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { css } from './withStyles';
 import { unit } from './Theme';
@@ -19,22 +19,22 @@ class Spacing extends PureComponent {
             top,
             left,
             right,
-            botton,
+            bottom,
             vertical,
             horizontal
         } = this.props;
 
         const computedTop = top ? top : vertical;
-        const computedBotton = botton ? botton : vertical;
+        const computedBottom = bottom ? bottom : vertical;
         const computedLeft = left ? left : horizontal;
         const computedRight = right ? right : horizontal;
 
         const computedStyles = {
             flex: 1,    // 크기를 일정한 비율로 늘리는데 도움을 줍니다.
-            ...(computedTop && {marginTop: computedTop * unit}),
-            ...(computedBotton && {marginBotton: computedBotton * unit}),
-            ...(computedLeft && {marginLeif: computedLeft * unit}),
-            ...(computedLeft && {marginRight: computedRight * unit})
+            ...(computedTop && { marginTop: computedTop * unit }),
+            ...(computedBottom && { marginBottom: computedBottom * unit }),
+            ...(computedLeft && { marginLeft: computedLeft * unit }),
+            ...(computedRight && { marginRight: computedRight * unit })
         };
 
         return <div {...css(computedStyles)}>{children}</div>;

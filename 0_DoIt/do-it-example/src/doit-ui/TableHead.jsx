@@ -7,7 +7,7 @@ class TableHead extends PureComponent {
 
         return (
             <thead>
-                {React.Children.map(children, child => 
+                {React.Children.map(children, child =>
                     React.cloneElement(child, { isHeader: true })
                 )}
             </thead>
@@ -17,6 +17,6 @@ class TableHead extends PureComponent {
 
 TableHead.propTypes = {
     children: PropTypes.node
-}
+};
 
 export default TableHead;

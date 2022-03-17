@@ -7,12 +7,12 @@ class TableBody extends PureComponent {
         const { length } = React.Children.toArray(children);
 
         return (
-            <tbodty>
+            <tbody>
                 {React.Children.map(children, (child, index) => {
                     const baseline = index < length - 1 ? true : false;
                     return React.cloneElement(child, { baseline });
                 })}
-            </tbodty>
+            </tbody>
         )
     }
 }
