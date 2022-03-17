@@ -2,7 +2,8 @@ import { configure, setAddon } from '@storybook/react';
 import interopRequireDefault from 'babel-runtime/helpers/interopRequireDefault';
 import JSXAddon from 'storybook-addon-jsx';
 
-import '../src/sass/materialize.scss';
+// import '../src/sass/materialize.scss';
+import '../src/doit-ui/app.css'
 
 function loadStories() {
     // require('../src/stories/InputStory');
