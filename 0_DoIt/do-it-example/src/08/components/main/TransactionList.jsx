@@ -10,17 +10,17 @@ import TransactionTable from "./TransactionTable";
 import Api from '../../Api';
 
 class TransactionList extends PureComponent {
-    state = {
-        transactions: [
-            // {
-            //     id: 'btx_01',
-            //     name: '비트코인(BTX)',
-            //     totalPrice: '123,123,000,000원',
-            //     currentPrice: '4,200,000원',
-            //     datetime: '2022/3/17 08:00:00'
-            // }
-        ]
-    }
+    // state = {
+    //     transactions: [
+    //         // {
+    //         //     id: 'btx_01',
+    //         //     name: '비트코인(BTX)',
+    //         //     totalPrice: '123,123,000,000원',
+    //         //     currentPrice: '4,200,000원',
+    //         //     datetime: '2022/3/17 08:00:00'
+    //         // }
+    //     ]
+    // }
 
     componentDidMount() {
         // axios.get('http://localhost:4000/transactions', { params: { code: 'BTX' } })
@@ -30,7 +30,8 @@ class TransactionList extends PureComponent {
     }
 
     render() {
-        const { transactions } = this.state;
+        // const { transactions } = this.state;
+        const { transactions } = this.props;
         return (
             <div>
                 <Heading level={3}>거래 현황</Heading>
@@ -44,5 +45,10 @@ class TransactionList extends PureComponent {
         )
     }
 }
+
+TransactionList.defaultProps = {
+    transactions: [],
+    setTransactionList: () => {}
+};
 
 export default TransactionList;
