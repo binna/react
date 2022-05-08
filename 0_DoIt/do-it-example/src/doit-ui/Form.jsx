@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const { Provider, Consumer } = React.createContext({});
@@ -63,14 +63,16 @@ class FormProvider extends React.PureComponent {
         const { values, errors } = this.state;
         return (
             <Provider
-            value={{
-                errors,
-                values,
-                onChange: this.onChange,
-                reset: this.reset
-            }}
+                value={{
+                    errors,
+                    values,
+                    onChange: this.onChange,
+                    reset: this.reset
+                }}
             >
-            <form onSubmit={this.handleSubmit}>{this.props.children}</form>
+            <form onSubmit={this.handleSubmit}>
+                {this.props.children}
+            </form>
             </Provider>
         );
     }
@@ -78,6 +80,7 @@ class FormProvider extends React.PureComponent {
     
 FormProvider.propTypes = {
     validate: PropTypes.func,
+    onSubmit: PropTypes.func.isRequired
 };
 
 FormProvider.defaultProps = {
